@@ -1,6 +1,6 @@
 {
   "env": {
-    "es6": true,
+    "es2020": true,
     "node": true,
     "jest": true
   },
@@ -21,8 +21,7 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "prettier",
-    "eslint-plugin-import-helpers"
+    "prettier"
   ],
   "rules": {
     "no-new": "off",
@@ -51,9 +50,6 @@
         }
       }
     ],
-    "@typescript-eslint/explicit-module-boundary-types": ["warn", {
-      "allowArgumentsExplicitlyTypedAsAny": true
-    }],
     "no-underscore-dangle": "off",
     "@typescript-eslint/camelcase": "off",
     "prettier/prettier": "error",
@@ -64,25 +60,12 @@
       {
         "ts": "never"
       }
-    ],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always", // new line between groups
-        "groups": [
-          "module",
-          "/^@server\/shared/",
-          "/^@/",
-          ["parent", "sibling", "index"]
-        ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
-      }
     ]
   },
   "settings": {
     "import/resolver": {
       "typescript": {
-        "directory": "packages/server/*/tsconfig.json"
+        "directory": "./tsconfig.json"
       }
     }
   }
